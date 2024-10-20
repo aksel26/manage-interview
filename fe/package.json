@@ -8,8 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "svgr" : "npx @svgr/cli -d src/assets/svg --ignore-existing --typescript --no-dimensions public/svg"
-
+    "svgr": "npx @svgr/cli -d src/assets/svg --ignore-existing --typescript --no-dimensions public/svg"
   },
   "dependencies": {
     "@mantine/core": "^7.13.2",
@@ -22,7 +21,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0",
-    "socket.io-client": "^4.8.0"
+    "socket.io-client": "^4.8.0",
+    "zustand": "^5.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
