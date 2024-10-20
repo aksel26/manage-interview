@@ -67,7 +67,7 @@ const SocketClient = () => {
             onChange={setUserType}
             data={[
               { label: "면접관", value: "ADVISOR" },
-              { label: "매니저", value: "MANAGER" },
+              { label: "매니저", value: "STAFF" },
               { label: "관리자", value: "ADMIN" },
             ]}
           />

@@ -2,16 +2,27 @@ import { AppShell, AppShellFooter, Burger, Flex, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { NavMenu } from "./NavMenu";
 import { Outlet } from "react-router-dom";
+import { useState } from "react";
+import useDrawerState from "../../../../store/store";
 
 export const AdminLayout = ({ children }: any) => {
   const [opened, { toggle }] = useDisclosure();
+
+  const { drawerOpened, drawerClose, drawerOpen } = useDrawerState();
+  console.log("drawerOpened: ", drawerOpened);
 
   return (
     <AppShell
       footer={{ height: 50, offset: true }}
       header={{ height: 60 }}
+      styles={{
+        main: {
+          transition: "margin-right 0.3s ease-in-out",
+          paddingRight: drawerOpened ? "15%" : "0",
+        },
+      }}
       navbar={{
-        width: 250,
+        width: 200,
         breakpoint: "sm",
         collapsed: { mobile: !opened },
       }}
@@ -22,7 +33,7 @@ export const AdminLayout = ({ children }: any) => {
         <div>Logo</div>
       </AppShell.Header>
 
-      <AppShell.Main h={"100vh"} w={"100vw"}>
+      <AppShell.Main h={"100vh"}>
         <Outlet />
       </AppShell.Main>
       <AppShell.Navbar p="md" withBorder={false}>

@@ -5,7 +5,7 @@ export const NavMenu = () => {
   const navigate = useNavigate();
   const MENU = [
     { label: "홈", url: "/admin" },
-    { label: "담당자 관리", url: "/admin/manager" },
+    { label: "담당자 관리", url: "/admin/staff" },
     { label: "면접실 관리", url: "/rooms" },
   ];
   return (

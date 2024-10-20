@@ -1,7 +1,7 @@
 import { Box, Button, Input, Modal, Stack } from "@mantine/core";
 import { useForm } from "@mantine/form";
 
-export const AddManager = ({ opened, close }: any) => {
+export const AddStaff = ({ opened, close }: any) => {
   const INPUT_ERR = "다시 확인해 주세요.";
   const isError = false;
 

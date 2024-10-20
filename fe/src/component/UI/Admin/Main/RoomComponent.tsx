@@ -1,28 +1,41 @@
-import { Grid, Paper, Text } from "@mantine/core";
+import { Grid, Group, Paper, Pill, Stack, Text } from "@mantine/core";
 
 export const RoomComponent = ({
   index,
-  handleSelectRoom,
-  selectedRooms,
+  roomInfo,
+  handleRoomClick,
+  selectedStaff,
 }: {
+  roomInfo: any;
   index: number;
-  handleSelectRoom: any;
-  selectedRooms: any;
+  handleRoomClick: any;
+  selectedStaff: any;
 }) => {
-  const isSelected = (index: number) => {
-    if (selectedRooms.includes(index)) {
-      return "var(--mantine-color-green-0)";
-    } else {
-      return "var(--mantine-color-green-1)";
-    }
-  };
+  const { staff, room } = roomInfo;
   return (
-    <Grid.Col span={2} onClick={() => handleSelectRoom(index)}>
-      <Paper shadow="xs" radius="lg" p="sm" bg={isSelected(index)}>
-        <Text size="xl" fw={600}>
-          {index + 1}
-        </Text>
-        <Text>Paper is the most basic ui component</Text>
+    <Grid.Col span={{ xs: 12, sm: 6, md: 3, lg: 2 }} onClick={() => handleRoomClick(index)}>
+      <Paper
+        withBorder
+        radius="lg"
+        p="md"
+        bg={selectedStaff && selectedStaff.staffIdx === staff.staffIdx ? "blue" : ""}
+      >
+        <Group justify="space-between">
+          <Text size="xl" fw={600}>
+            {index + 1}
+          </Text>
+
+          {staff.staffName && (
+            <Pill size="sm" bg={"#ffc8c8"}>
+              {staff.staffName}
+            </Pill>
+          )}
+        </Group>
+
+        <Stack gap={"xs"} mt={"md"}>
+          <Text size="xs">면접단계 : 인사</Text>
+          <Text size="xs">면접관 : {room.advisorName}</Text>
+        </Stack>
       </Paper>
     </Grid.Col>
   );

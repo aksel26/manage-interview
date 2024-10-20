@@ -4,7 +4,7 @@ import classes from "./indicator.module.css";
 
 const userTypeENUM = [
   { label: "면접관", value: "ADVISOR" },
-  { label: "매니저", value: "MANAGER" },
+  { label: "매니저", value: "STAFF" },
   { label: "관리자", value: "ADMIN" },
 ];
 type TIndicatorState = {

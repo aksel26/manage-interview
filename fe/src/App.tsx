@@ -4,9 +4,9 @@ import { AdminLayout } from "./component/UI/Admin/Common/AdminLayout.tsx";
 import { Login } from "./page/Login/Login.tsx";
 import { NotFound } from "./page/NotFound.tsx";
 import { Main } from "./page/admin/Main.tsx";
-import { ManageManager } from "./page/admin/ManageManager.tsx";
+import { ManageStaffs } from "./page/admin/ManageStaffs.tsx";
 import { Advisor } from "./page/advisor/Advisor.tsx";
-import { Manager } from "./page/manager/Manager.tsx";
+import { Staff } from "./page/staff/Staff.tsx";
 
 function App() {
   const location = useLocation();
@@ -18,10 +18,10 @@ function App() {
         <Route path="/advisor" element={<Advisor />} />
         <Route element={<AdminLayout />}>
           <Route path="/admin" element={<Main />} />
-          <Route path="/admin/manager" element={<ManageManager />} />
+          <Route path="/admin/staff" element={<ManageStaffs />} />
         </Route>
 
-        <Route path="/manager" element={<Manager />} />
+        <Route path="/staff" element={<Staff />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
