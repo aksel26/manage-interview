@@ -18,7 +18,7 @@ export const AdminLayout = ({ children }: any) => {
       styles={{
         main: {
           transition: "margin-right 0.3s ease-in-out",
-          paddingRight: drawerOpened ? "15%" : "0",
+          paddingRight: drawerOpened ? "16%" : "0",
         },
       }}
       navbar={{
